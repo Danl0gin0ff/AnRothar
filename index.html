@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An Rothar bike repair shop in Midleton, Co. Cork. Get repair estimates, opening hours and contact details.">
+    <title>An Rothar | Bike Repairs in Midleton</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/browser-bookmark.png?v=2" type="image/png">
+    <link rel="apple-touch-icon" href="assets/browser-bookmark.png?v=2">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="nav-bar">
+            <button class="banner-home" type="button" data-nav="home" aria-label="Return to home"></button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page is-active" data-page="home" aria-labelledby="home-title">
+            <section class="hero">
+                <div class="hero-content">
+                    <h1 id="home-title">Expert Bike Repairs in Midleton</h1>
+                    <p>Fast, reliable servicing for all bikes.</p>
+                    <div class="hero-actions" aria-label="Home actions">
+                        <button class="button button--primary" type="button" data-nav="estimate">Get Repair Estimate</button>
+                    </div>
+                    <div class="hero-hours" aria-label="Opening hours">
+                        <span>Open Mon–Sat</span>
+                        <strong>10:00–18:00</strong>
+                        <small>Sunday closed</small>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section--tight" aria-labelledby="find-us-title">
+                <div class="section-inner">
+                    <p class="section-kicker">Midleton</p>
+                    <h2 class="section-heading" id="find-us-title">Find Us</h2>
+                    <div class="map-frame">
+                        <iframe src="https://www.google.com/maps?q=An%20Rothar%2C%202%20Showpark%2C%20Mill%20Rd%2C%20Midleton%2C%20Co.%20Cork&amp;output=embed" width="100%" height="350" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </section>
+
+            <section class="service-highlight" aria-labelledby="service-highlight-title">
+                <div class="service-highlight-inner">
+                    <p class="section-kicker">Bicycle Service/Repairs</p>
+                    <h2 id="service-highlight-title">General Service €20</h2>
+                    <p>Includes tyre check, wheels check, gear cables check, brakes check and oil chain.</p>
+                </div>
+            </section>
+
+            <section class="home-contact-block" aria-labelledby="home-contact-title">
+                <div class="home-contact-inner">
+                    <div>
+                        <p class="section-kicker">Need a hand?</p>
+                        <h2 id="home-contact-title">Talk to the workshop before you call in.</h2>
+                        <p>For repairs, parts, servicing questions or availability, contact An Rothar directly.</p>
+                    </div>
+                    <div class="home-contact-actions">
+                        <a class="button button--primary" href="tel:0214632554">Call 021 463 2554</a>
+                        <a class="button button--ghost" href="mailto:info@anrothar.ie">Email the Shop</a>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section class="page estimate-page" data-page="estimate" aria-labelledby="estimate-title">
+            <section class="page-hero">
+                <h1 id="estimate-title">Repair Estimate</h1>
+                <p>Pick the closest match for your bike issue and get a quick workshop guide price.</p>
+            </section>
+
+            <section class="section section--tight">
+                <div class="estimate-panel">
+                    <div class="symptom-helper" aria-labelledby="symptom-title">
+                        <div>
+                            <p class="symptom-kicker">Start here</p>
+                            <h2 id="symptom-title">What are you noticing?</h2>
+                        </div>
+                        <div class="symptom-grid" aria-label="Common bike symptoms">
+                            <button type="button" class="symptom-button" data-symptom-category="Wheels/Tyres" data-symptom-issue="Puncture Repair">Flat tyre</button>
+                            <button type="button" class="symptom-button" data-symptom-category="Braking" data-symptom-issue="Pad Replacement">Brakes feel weak</button>
+                            <button type="button" class="symptom-button" data-symptom-category="Drivetrain" data-symptom-issue="Derailleur Indexing">Gears are skipping</button>
+                            <button type="button" class="symptom-button" data-symptom-category="Drivetrain" data-symptom-issue="Chain Replacement">Chain problem</button>
+                            <button type="button" class="symptom-button" data-symptom-category="Wheels/Tyres" data-symptom-issue="Wheel Truing">Wheel wobbling</button>
+                            <button type="button" class="symptom-button" data-symptom-category="General Service" data-symptom-issue="Safety Check">Bike feels unsafe</button>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="problem-category">Problem Category</label>
+                        <select id="problem-category" name="problem-category">
+                            <option value="">Choose a category</option>
+                            <option value="Drivetrain">Drivetrain</option>
+                            <option value="Braking">Braking</option>
+                            <option value="Wheels/Tyres">Wheels/Tyres</option>
+                            <option value="Steering">Steering</option>
+                            <option value="General Service">General Service</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="specific-issue">Specific Issue</label>
+                        <select id="specific-issue" name="specific-issue" disabled>
+                            <option value="">Choose an issue</option>
+                        </select>
+                    </div>
+
+                    <div class="estimate-output" id="estimate-output" hidden aria-live="polite">
+                        <p class="estimate-cost" id="estimate-cost">Estimated Cost: €0</p>
+                        <p class="estimate-disclaimer">Final price may vary. Call us to confirm: 021 463 2554.</p>
+                        <div class="estimate-actions">
+                            <a class="button button--primary" href="tel:0214632554">📞 Book This Repair</a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </section>
+
+        <section class="page contact-page" data-page="contact" aria-labelledby="contact-title">
+            <section class="page-hero">
+                <h1 id="contact-title">Contact An Rothar</h1>
+                <p>Workshop support, repairs and bike servicing at 2 Showpark, Mill Rd, Midleton.</p>
+            </section>
+
+            <section class="section section--tight">
+                <div class="contact-layout">
+                    <div class="info-panel">
+                        <p class="about-text">An Rothar has been serving cyclists in Midleton since 1988 — from beginners to racing cyclists. Our trained staff are here Monday to Saturday, 10:00–18:00.</p>
+
+                        <ul class="contact-list" aria-label="Contact details">
+                            <li class="contact-item">
+                                <span class="contact-icon" aria-hidden="true">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                        <path d="M7.1 5.2 8.3 4a2 2 0 0 1 2.9.3l1.1 1.8a2 2 0 0 1-.4 2.5l-1.1 1.1a12.5 12.5 0 0 0 3.5 3.5l1.1-1.1a2 2 0 0 1 2.5-.4l1.8 1.1a2 2 0 0 1 .3 2.9l-1.2 1.2c-.8.8-2 1.1-3.1.7A17.4 17.4 0 0 1 6.4 8.3c-.4-1.1-.1-2.3.7-3.1Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
+                                <span>
+                                    <span class="contact-label">Phone</span>
+                                    <a class="contact-value" href="tel:0214632554">(021) 463 2554</a>
+                                </span>
+                            </li>
+                            <li class="contact-item">
+                                <span class="contact-icon" aria-hidden="true">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                        <path d="M4 6h16v12H4V6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
+                                <span>
+                                    <span class="contact-label">Email</span>
+                                    <a class="contact-value" href="mailto:info@anrothar.ie">info@anrothar.ie</a>
+                                </span>
+                            </li>
+                        </ul>
+
+                        <div class="social-links" aria-label="Social links">
+                            <a class="social-link" href="https://www.facebook.com/anrothar" target="_blank" rel="noopener" aria-label="An Rothar on Facebook">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <path d="M14 8.2V6.6c0-.8.3-1.2 1.3-1.2h1.8V2.2c-.3 0-1.5-.1-2.8-.1-2.8 0-4.7 1.7-4.7 4.8v1.3H6.5v3.6h3.1V22H14V11.8h3l.5-3.6H14Z"/>
+                                </svg>
+                            </a>
+                            <a class="social-link" href="https://www.instagram.com/anrothar" target="_blank" rel="noopener" aria-label="An Rothar on Instagram">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="12" cy="12" r="3.4" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M17.3 6.8h.1" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                                </svg>
+                            </a>
+                            <a class="social-link" href="https://t.me/anrothar" target="_blank" rel="noopener" aria-label="An Rothar on Telegram">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="M21 4 3.8 10.7c-.9.3-.9 1.5.1 1.8l4.2 1.3 1.6 5.1c.3.9 1.4 1.1 2 .4l2.4-2.7 4.4 3.2c.8.6 1.9.2 2.1-.8L23 5.3c.2-1-.8-1.8-2-1.3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="m8.4 13.7 8.7-5.4-6.7 7.4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div class="hours-card">
+                            <table class="hours-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Day</th>
+                                        <th scope="col">Hours</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Monday–Saturday</td>
+                                        <td>10:00–18:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sunday</td>
+                                        <td>Closed</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="map-frame contact-map">
+                        <iframe src="https://www.google.com/maps?q=An%20Rothar%2C%202%20Showpark%2C%20Mill%20Rd%2C%20Midleton%2C%20Co.%20Cork&amp;output=embed" width="100%" height="350" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        © <span id="footer-year">2026</span> An Rothar · 2 Showpark, Mill Rd, Midleton, Co. Cork · 021 463 2554
+    </footer>
+
+    <script src="java.js"></script>
+</body>
+</html>
