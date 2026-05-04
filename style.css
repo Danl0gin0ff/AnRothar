@@ -134,7 +134,7 @@ body.banner-compact .nav-bar::before {
 }
 
 main {
-    min-height: 100vh;
+    min-height: 0;
     padding-top: 0;
 }
 
@@ -308,8 +308,7 @@ main {
 }
 
 .hours-card,
-.estimate-panel,
-.info-panel {
+.estimate-panel {
     border: 1px solid var(--color-line);
     border-radius: var(--radius);
     background: rgba(255, 255, 255, 0.9);
@@ -369,9 +368,8 @@ main {
     border: 0;
 }
 
-.estimate-page,
-.contact-page {
-    min-height: 100vh;
+.estimate-page {
+    min-height: auto;
     background-color: var(--color-paper);
     background-position: center;
     background-size: cover;
@@ -395,16 +393,12 @@ main {
     pointer-events: none;
 }
 
-.contact-page {
-    background-image:
-        linear-gradient(135deg, rgba(244, 244, 244, 0.97), rgba(244, 244, 244, 0.9) 48%, rgba(43, 43, 43, 0.74)),
-        radial-gradient(circle at 86% 18%, rgba(212, 47, 47, 0.3), transparent 18rem),
-        url("https://images.unsplash.com/photo-1648951825096-0cbf586aa11a?auto=format&fit=crop&fm=jpg&q=82&w=2200");
+.estimate-page .section {
+    background: transparent;
 }
 
-.estimate-page .section,
-.contact-page .section {
-    background: transparent;
+.estimate-page .section--tight {
+    padding-bottom: 3.5rem;
 }
 
 .estimate-page .page-hero h1,
@@ -573,100 +567,6 @@ main {
     margin-top: 0.2rem;
 }
 
-.contact-layout {
-    display: grid;
-    gap: 1rem;
-    width: min(100%, 1080px);
-    margin: 0 auto;
-}
-
-.info-panel {
-    display: grid;
-    gap: 1.35rem;
-    padding: 1rem;
-}
-
-.about-text {
-    margin: 0;
-    color: var(--color-primary-soft);
-    font-size: 1rem;
-    font-weight: 500;
-}
-
-.contact-list {
-    display: grid;
-    gap: 0.8rem;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.contact-item {
-    display: grid;
-    grid-template-columns: 42px 1fr;
-    gap: 0.75rem;
-    align-items: center;
-}
-
-.contact-icon,
-.social-link {
-    display: inline-grid;
-    place-items: center;
-    color: var(--color-white);
-    background: linear-gradient(180deg, #e23a3a, var(--color-accent));
-    border-radius: var(--radius);
-}
-
-.contact-icon {
-    width: 42px;
-    height: 42px;
-}
-
-.contact-label {
-    display: block;
-    color: var(--color-muted);
-    font-size: 0.78rem;
-    font-weight: 800;
-    text-transform: uppercase;
-}
-
-.contact-value {
-    color: var(--color-primary);
-    font-weight: 800;
-    text-decoration: none;
-}
-
-.contact-value:hover,
-.contact-value:focus-visible {
-    color: var(--color-accent);
-    outline: none;
-}
-
-.social-links {
-    display: flex;
-    gap: 0.6rem;
-    align-items: center;
-}
-
-.social-link {
-    width: 42px;
-    height: 42px;
-    text-decoration: none;
-    transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
-}
-
-.social-link:hover,
-.social-link:focus-visible {
-    background: var(--color-primary);
-    box-shadow: 0 10px 24px rgba(43, 43, 43, 0.18);
-    transform: scale(1.08);
-    outline: none;
-}
-
-.contact-map {
-    min-height: 350px;
-}
-
 .home-contact-block {
     padding: 3rem 1rem;
     color: var(--color-white);
@@ -742,6 +642,8 @@ main {
 }
 
 .site-footer {
+    position: relative;
+    z-index: 1;
     padding: 1.65rem 1rem 1.35rem;
     color: rgba(255, 255, 255, 0.84);
     background: var(--color-primary);
@@ -775,8 +677,7 @@ main {
 }
 
 @media (max-width: 899px) {
-    .estimate-page,
-    .contact-page {
+    .estimate-page {
         background-attachment: scroll;
     }
 }
@@ -811,8 +712,7 @@ main {
         padding: 4.5rem 1.5rem;
     }
 
-    .estimate-panel,
-    .info-panel {
+    .estimate-panel {
         padding: 1.35rem;
     }
 
@@ -845,23 +745,8 @@ main {
         padding: 1.6rem;
     }
 
-    .contact-layout {
-        grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
-        align-items: stretch;
-    }
-
     .home-contact-inner {
         grid-template-columns: minmax(0, 1fr) auto;
         align-items: center;
-    }
-
-    .contact-layout .map-frame {
-        width: 100%;
-        height: 100%;
-    }
-
-    .contact-layout .map-frame iframe {
-        height: 100%;
-        min-height: 520px;
     }
 }
