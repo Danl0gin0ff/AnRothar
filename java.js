@@ -73,6 +73,8 @@ const renderPage = (nextPage) => {
         page.hidden = !isActive;
     });
 
+    document.body.classList.remove("page-home", "page-estimate");
+    document.body.classList.add(`page-${nextPage}`);
     currentPage = nextPage;
 };
 
